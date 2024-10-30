@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+   com.mavin.dingtalk.DingTalkAutoConfiguration,\
+   com.mavin.dingtalk.controller.DingMiniH5EventHttpController,\
+   com.mavin.dingtalk.controller.DingMiniH5EventStreamController,\
+   com.mavin.dingtalk.controller.DingBotMsgCallbackHttpController,\
+   com.mavin.dingtalk.controller.DingBotMsgCallbackStreamController

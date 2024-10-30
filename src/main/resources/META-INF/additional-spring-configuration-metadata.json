@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "name": "dingtalk.miniH5.event.httpEnabled",
+      "type": "java.lang.Boolean",
+      "defaultValue": false
+    },
+    {
+      "name": "dingtalk.miniH5.event.streamEnabled",
+      "type": "java.lang.Boolean",
+      "defaultValue": false
+    },
+    {
+      "name": "dingtalk.miniH5.event.listener.defaultEnabled",
+      "type": "java.lang.Boolean",
+      "defaultValue": false
+    },
+    {
+      "name": "dingtalk.miniH5.bot.httpEnabled",
+      "type": "java.lang.Boolean",
+      "defaultValue": false
+    },
+    {
+      "name": "dingtalk.miniH5.bot.streamEnabled",
+      "type": "java.lang.Boolean",
+      "defaultValue": false
+    }
+  ]
+}
