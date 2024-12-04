@@ -26,7 +26,6 @@ import java.util.List;
  * @date 2024/7/8 12:16
  * @description 默认钉钉机器人回调消息Stream模式控制器
  */
-@ConditionalOnMissingBean
 @Component
 @Slf4j
 @ConditionalOnProperty(prefix = "dingtalk.miniH5.bot", name = "streamEnabled", havingValue = "true")

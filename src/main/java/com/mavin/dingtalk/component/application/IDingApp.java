@@ -2,14 +2,14 @@ package com.mavin.dingtalk.component.application;
 
 import com.mavin.dingtalk.annotation.MethodDesc;
 import com.mavin.dingtalk.component.factory.app.DingAppFactory;
-import org.springframework.beans.factory.SmartInitializingSingleton;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * @author Mavin
  * @date 2024/6/24 14:31
  * @description 钉钉应用，整个项目基于Spring容器能力，所以最好将APP实现注册到IoC容器中
  */
-public interface IDingApp extends IDingCorp, SmartInitializingSingleton {
+public interface IDingApp extends IDingCorp, InitializingBean {
 
     /**
      * @return 钉钉应用key
@@ -36,7 +36,7 @@ public interface IDingApp extends IDingCorp, SmartInitializingSingleton {
     String getAppId();
 
     @Override
-    default void afterSingletonsInstantiated() {
+    default void afterPropertiesSet() {
         DingAppFactory.setAppCache(this);
     }
 

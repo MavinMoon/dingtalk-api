@@ -25,7 +25,6 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/ding")
-@ConditionalOnMissingBean
 @ConditionalOnProperty(prefix = "dingtalk.miniH5.bot", name = "httpEnabled", havingValue = "true")
 public class DingBotMsgCallbackHttpController extends AbstractDingBotMsgCallbackController<DingBotMsgCallbackRequest> {
 

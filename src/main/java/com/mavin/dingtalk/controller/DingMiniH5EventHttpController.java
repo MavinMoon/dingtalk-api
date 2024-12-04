@@ -31,7 +31,6 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @RestController
 @RequestMapping("/ding/miniH5/event")
-@ConditionalOnMissingBean
 @ConditionalOnProperty(prefix = "dingtalk.miniH5.event", name = "httpEnabled", havingValue = "true")
 public class DingMiniH5EventHttpController extends AbstractDingMiniH5EventController {
 

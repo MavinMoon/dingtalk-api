@@ -25,7 +25,6 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-@ConditionalOnMissingBean
 @ConditionalOnProperty(prefix = "dingtalk.miniH5.event", name = "streamEnabled", havingValue = "true")
 public class DingMiniH5EventStreamController extends AbstractDingMiniH5EventController implements SmartInitializingSingleton {
 

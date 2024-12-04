@@ -47,7 +47,6 @@ public class DefaultDingMiniH5EventListener {
         }
         miniH5EventCallbackHandlers
                 .stream()
-                .filter(handler -> handler.support(payload))
                 .collect(Collectors.groupingBy(IDingMiniH5EventCallbackHandler::order))
                 .entrySet()
                 .stream()
