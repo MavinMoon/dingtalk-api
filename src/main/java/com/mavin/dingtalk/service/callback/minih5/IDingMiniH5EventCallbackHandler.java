@@ -1,6 +1,7 @@
 package com.mavin.dingtalk.service.callback.minih5;
 
 import com.mavin.dingtalk.component.application.IDingMiniH5;
+import com.mavin.dingtalk.constant.minih5event.DingMiniH5Event;
 import com.mavin.dingtalk.pojo.callback.event.DingMiniH5EventPayload;
 
 /**
@@ -16,6 +17,13 @@ public interface IDingMiniH5EventCallbackHandler {
      * @return 钉钉微应用
      */
     IDingMiniH5 getApp();
+
+    /**
+     * 获取支持的钉钉事件
+     *
+     * @return 支持的事件
+     */
+    DingMiniH5Event getSupportEvent();
 
     /**
      * 判断处理器是否支持该事件

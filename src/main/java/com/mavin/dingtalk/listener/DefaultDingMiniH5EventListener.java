@@ -47,6 +47,7 @@ public class DefaultDingMiniH5EventListener {
         }
         miniH5EventCallbackHandlers
                 .stream()
+                .filter(handler -> eventType.getEventType().equals(handler.getSupportEvent().getEventType()))
                 .collect(Collectors.groupingBy(IDingMiniH5EventCallbackHandler::order))
                 .entrySet()
                 .stream()
@@ -57,7 +58,7 @@ public class DefaultDingMiniH5EventListener {
                         final List<Task> tasks = executorWithLevel.handlers.stream()
                                 .map(i -> new Task(payload, i))
                                 .collect(Collectors.toList());
-                        tasks.forEach(defaultDingTalkExecutor::submit);
+                        defaultDingTalkExecutor.invokeAll(tasks);
                     } catch (Exception e) {
                         log.error("执行对钉钉微应用事件:{}({})异常", eventType.getEventType(), eventType.getEventName(), e);
                     }

@@ -29,6 +29,12 @@ public abstract class AbstractDingMiniH5EventCallbackHandler<T extends IDingMini
     @Getter
     private final IDingMiniH5 app;
 
+    /**
+     * 处理器对应的钉钉事件类型
+     */
+    @Getter
+    private final DingMiniH5Event supportEvent;
+
     @Override
     public boolean support(DingMiniH5EventPayload payload) {
         Preconditions.checkNotNull(payload);
@@ -47,7 +53,6 @@ public abstract class AbstractDingMiniH5EventCallbackHandler<T extends IDingMini
         Preconditions.checkArgument(payload.getAppId().equals(app.getAppId()), "该事件回调处理器与钉钉应用不匹配");
         log.info("客户端{}接收到钉钉事件:{}({})", this.getClass().getSimpleName(), eventType.getEventType(), eventType.getEventName());
         if (!support(payload)) {
-            log.error("不支持处理该类型钉钉事件:{}({})", eventType.getEventType(), eventType.getEventName());
             return false;
         }
         try {
